@@ -1,7 +1,7 @@
 {
   "name": "vidiff",
   "description": "Vidiff CLI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "David Hérault <david@vidiff.com> (https://github.com/dherault)",
   "bin": {
     "vidiff": "./bin/run"
@@ -50,10 +50,10 @@
   },
   "repository": "vidiff/vidiff-npm-package",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint .",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "version": "oclif-dev readme && git add README.md"
+    "foo": "oclif-dev manifest && oclif-dev readme",
+    "bar": "rm -f oclif.manifest.json",
+    "baz": "oclif-dev readme && git add README.md"
   }
 }
