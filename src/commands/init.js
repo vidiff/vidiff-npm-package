@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const mkdirp = require('mkdirp')
 const { Command, flags } = require('@oclif/command')
 const getGitBranchName = require('current-git-branch')
 
@@ -13,6 +14,7 @@ class InitCommand extends Command {
     const cwd = process.cwd()
     const configurationLocation = path.resolve(cwd, '.vidiffrc')
     const scenarioEntryLocation = path.resolve(cwd, entry)
+    const scenarioEntryDirectory = path.dirname(scenarioEntryLocation)
     const branch = getGitBranchName()
 
     if (!branch) {
@@ -27,15 +29,21 @@ class InitCommand extends Command {
 
     this.log(`Creating scenario file at ${entry}`)
 
+    if (!fs.existsSync(scenarioEntryDirectory)) {
+      mkdirp.sync(scenarioEntryDirectory)
+    }
+
     fs.writeFileSync(scenarioEntryLocation, scenarioFileContent)
 
     this.log('Done! You can commit and push your work then run your first build using:\nnpx vidiff create-build -p PROJECT_ID -t API_TOKEN')
   }
 }
 
-InitCommand.description = `Describe the command here
+InitCommand.description = `Creates the files needed for Vidiff to work
 ...
-Extra documentation goes here
+Creates two files in your repository:
+- A .vidiffrc configuration file, with default capabilities and branchToUrlMapping
+- A scenario file
 `
 
 InitCommand.flags = {

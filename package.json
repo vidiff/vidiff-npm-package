@@ -1,7 +1,7 @@
 {
   "name": "vidiff",
   "description": "Vidiff CLI",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "David Hérault <david@vidiff.com> (https://github.com/dherault)",
   "bin": {
     "vidiff": "./bin/run"
@@ -12,7 +12,8 @@
     "@oclif/config": "^1.13.0",
     "@oclif/plugin-help": "^2.2.0",
     "axios": "^0.19.0",
-    "current-git-branch": "^1.1.0"
+    "current-git-branch": "^1.1.0",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",

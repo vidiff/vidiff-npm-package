@@ -22,10 +22,7 @@ class CreateBuild extends Command {
   }
 }
 
-CreateBuild.description = `Describe the command here
-...
-Extra documentation goes here
-`
+CreateBuild.description = 'Launches a new build'
 
 CreateBuild.flags = {
   apiToken: flags.string({
