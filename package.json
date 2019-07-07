@@ -1,7 +1,7 @@
 {
   "name": "vidiff",
   "description": "Vidiff CLI",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "David Hérault <david@vidiff.com> (https://github.com/dherault)",
   "bin": {
     "vidiff": "./bin/run"
@@ -52,7 +52,7 @@
   "scripts": {
     "posttest": "eslint .",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "foo": "oclif-dev manifest && oclif-dev readme",
+    "prepack": "oclif-dev manifest",
     "bar": "rm -f oclif.manifest.json",
     "baz": "oclif-dev readme && git add README.md"
   }
