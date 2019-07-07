@@ -29,7 +29,7 @@ class InitCommand extends Command {
 
     fs.writeFileSync(scenarioEntryLocation, scenarioFileContent)
 
-    this.log('Done! You can commit and push your work then run your first build using:\nnpx vidiff create-build -p PROJECT_ID -a API_TOKEN')
+    this.log('Done! You can commit and push your work then run your first build using:\nnpx vidiff create-build -p PROJECT_ID -t API_TOKEN')
   }
 }
 
